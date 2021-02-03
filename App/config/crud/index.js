@@ -6,9 +6,12 @@ const selectItens = (req,res) => {
  
     })
 }
+
+
 const saveItens = (req,res) => {
-    const {material} = req.body
-    query('INSERT INTO material SET ?', material, res.redirect('/'))
+    const { nome, quant, preco } = req.body
+    query(`INSERT INTO material(nome_produto,quantidade,preco) VALUES ('${nome}','${quant}','${preco}')`,res.redirect('/'))
 }
+
 
 module.exports = {selectItens, saveItens}

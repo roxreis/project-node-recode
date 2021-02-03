@@ -1,6 +1,6 @@
 const express = require('express');
 const caminho = express.Router(); 
-const sql = require('./model/crud/index');
+const sql = require('../config/crud/index');
 
 caminho.get("/", sql.selectItens);
 
